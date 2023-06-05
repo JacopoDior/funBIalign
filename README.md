@@ -16,32 +16,32 @@ Before using funBIalign to your own dataset, we suggest to check one of the thre
 
 Here we review the three fundamental steps of the algorithm.
 ## STEP 1 - Portion creation and alignment
-Select the length (as number of data points) and the minimum number of portions characterizing the resulting motifs and perform Step 1
+Select the length (as number of data points) `portion_len` and the minimum number of portions `min_card` characterizing the resulting motifs and perform Step 1
 ```
 # Select the length (as number of data points) and the minimum number of portions
 portion_len <- 12
-min_card  <- 3 
+min_card <- 3 
 
 # Creates and align all the portions
-window_data      <- create_lots(mydata, portion_len)
+window_data <- create_lots(mydata, portion_len)
 ```
 
 ## STEP 2 -  Hierarchical clustering based on the fMRS dissimilarity
 Compute fMRS-based dissimilarity matrix, perform the agglomerative hierarchical clustering and get the sub-trees.
 ```
 #Compute fMRS-based dissimilarity matrix
-D_fmsr  <- create_distance(foodinfl_loc, window_data, portion_len)
+D_fmsr <- create_distance(foodinfl_loc, window_data, portion_len)
 
 #Get the sub-trees (tree_s)
-minidend         <- get_minidend(D_fmsr, window_data)
+minidend <- get_minidend(D_fmsr, window_data)
 ```
 
 ## STEP 3 - Collection of candidate functional motifs
 Identify seeds node and their families. Get for every family a recommended node (candidate motif).
 ```
 # Identify seeds and corresponding families
-all_paths   <- get_path_complete(minidend, window_data, min_card = min_card)
-all_paths   <- all_paths[!(lapply(all_paths, is.null) %>% unlist())] 
+all_paths <- get_path_complete(minidend, window_data, min_card = min_card)
+all_paths <- all_paths[!(lapply(all_paths, is.null) %>% unlist())] 
 
 # Get recommended nodes and their info (cardinality and score)
 # Collect all recommended nodes (as an array of portion ids)
