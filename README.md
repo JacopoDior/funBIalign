@@ -63,4 +63,6 @@ Following the paper **funBIalign: a hierachical algorithm for functional motif d
 
 The first 80 simulations are stored in the **same_noise** folder that contains motifs sharing the same σ, and we use all σ values in turn.
 
-The last 20 simulations are in the **different_noise** folder that counts simulations having each motif with a different σ. 
+The last 20 simulations are in the **different_noise** folder that counts simulations having each motif with a different σ.
+
+Every dataset is stored in a `.rds` in the form of a list: the actual data are in the `line` field, while the `motif` one keeps information about the motifs embedded.
