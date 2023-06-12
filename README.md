@@ -65,4 +65,4 @@ The first 80 simulations are stored in the **same_noise** folder that contains m
 
 The last 20 simulations are in the **different_noise** folder that counts simulations having each motif with a different σ.
 
-Every dataset is stored in a `.rds` in the form of a list: the actual data are in the `line` field, while the `motif` one keeps information about the motifs embedded.
+Every dataset is stored in a `.rds` in the form of a list: the actual data are in the `line` field, while the `motifs` one keeps information about the motifs embedded (curve id, starting data point, and ending data point).
