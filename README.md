@@ -57,3 +57,10 @@ vec_of_card <- lapply(list_of_recommendations, length) %>% unlist()
 vec_of_scores <- lapply(all_paths, function(x){x$recommended_node_scores}) %>% unlist()
 ```
 For the Step 4 - Post-processing we invite the user to refer to the case studies scripts where commented examples with different criteria are shown
+
+# Simulations
+Following the paper **funBIalign: a hierachical algorithm for functional motif discovery based on mean squared residue scores**, we present here the 100 different simulated data set we used to assess the performance of our method. We consider 10 alternative sets of 4 motifs; 2 alternative numbers of occurrences (8 or 10) which, for simplicity, are the same for all motifs; and 4 alternative levels of noise, expressed by σ = 0.1, 0.5, 1 or 2.
+
+The first 80 simulations are stored in the **same_noise** folder that contains motifs sharing the same σ, and we use all σ values in turn.
+
+The last 20 simulations are in the **different_noise** folder that counts simulations having each motif with a different σ. 
